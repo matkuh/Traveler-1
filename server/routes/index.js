@@ -1,6 +1,6 @@
-const path = require("path")
+const path = require('path')
 const router = require("express").Router()
-const apiRoutes = require("./apiRoutes")
+const apiRoutes = require("./api")
 // const express = require("express")
 // const app = express();
 
@@ -11,12 +11,13 @@ const apiRoutes = require("./apiRoutes")
 // })
 
 // So, use router.route
+console.log("Inside routes folder")
 router.route("/api", apiRoutes)
 
 // If no route is defined, it will go here!
-router.use(function (req, res) {
-    res.sendFile(path.join(__dirname, "../client/public/index.html"))
-});
+// router.use(function (req, res) {
+//     res.sendFile(path.join(__dirname, "../client/public/index.html"))
+// });
 
 module.exports = router;
 // module.exports = app
