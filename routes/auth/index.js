@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require('passport');
-const db = require('../../models');
+const db = require('../../../models');
 
 // shorthand
 const log = console.log
