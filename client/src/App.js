@@ -4,6 +4,7 @@ import './App.css';
 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Feed from './pages/Feed';
 
 // Utils
 import API from './utils/API.js'
@@ -24,13 +25,14 @@ class App extends Component {
   // TO DO: Learn what async is
   componentDidMount() {
     // This method will check on every render of the page if the user is authenticated. If so they can stay on any page, if not they will be redirected to the login page
-    API.getUsers().then(user => {
-      log(user)
-      this.setState({
-        loggedIn: user.data.isLoggedin,
-        user_id: user.data.id
-      })
-    })
+    API.getUser()
+    // API.getUser().then(user => {
+    // log(user)
+    // this.setState({
+    //   loggedIn: user.data.isLoggedin,
+    //   user_id: user.data.id
+    // })
+    // })
   }
 
   logout() {
@@ -55,13 +57,18 @@ class App extends Component {
         </div >
       );
     } else {
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Feed} />
-          <Route exact path="/discover" component={Discover} />
-          <Route exact path="/profile" component={Profile} />
-        </Switch>
-      </Router>
+      return (
+        <div>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Feed} />
+              {/* <Route exact path="/discover" component={Discover} /> */}
+              {/* <Route exact path="/profile" component={Profile} /> */}
+            </Switch>
+          </Router>
+        </div>
+      )
+
     }
 
   }

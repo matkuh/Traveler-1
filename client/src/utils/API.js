@@ -10,12 +10,14 @@ export default {
 
     // Check if user is authenticated
     getUser: () => {
+        console.log("Get User")
         return axios.get("/auth/user")
     },
 
     // Logout the user
     logout: () => {
-        return axios.get("/auth/logout")
+        console.log("Logout User")
+        // return axios.get("/auth/logout")
     }
 
 }
