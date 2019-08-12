@@ -17,7 +17,7 @@ export default {
     // Logout the user
     logout: () => {
         console.log("Logout User")
-        // return axios.get("/auth/logout")
+        return axios.get("/auth/logout")
     }
 
 }
