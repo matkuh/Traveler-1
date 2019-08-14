@@ -2,7 +2,7 @@
   "name": "traveler",
   "version": "1.0.0",
   "description": "",
-  "hompage": "https://dchicchon.github.io/traveler",
+  
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -12,6 +12,8 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
