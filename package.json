@@ -1,8 +1,7 @@
 {
   "name": "traveler",
   "version": "1.0.0",
-  "description": "",
-  
+  "description": "A social media platform for people who love traveling and those who want to explore.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -28,5 +27,14 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.13.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dchicchon/Traveler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dchicchon/Traveler/issues"
+  },
+  "homepage": "https://github.com/dchicchon/Traveler#readme"
 }

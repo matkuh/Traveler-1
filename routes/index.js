@@ -15,9 +15,9 @@ console.log("Inside routes folder")
 router.route("/api", apiRoutes)
 
 // If no route is defined, it will go here!
-// router.use(function (req, res) {
-//     res.sendFile(path.join(__dirname, "../client/public/index.html"))
-// });
+router.use(function (req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/index.html"))
+});
 
 module.exports = router;
 // module.exports = app
