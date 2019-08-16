@@ -1,7 +1,7 @@
 {
   "name": "traveler",
   "version": "0.1.0",
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://obscure-plains-30549.herokuapp.com/",
   "homepage": "http://dchicchon.github.io/Traveler",
   "private": true,
   "dependencies": {
