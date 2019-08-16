@@ -1,20 +1,19 @@
 language: node_js
 node_js:
-  - '12'
+- '12'
 branches:
-  only:
-    -master
+  only: "-master"
 cache:
   directories:
-    - node_modules
-    - client/node_modules
+  - node_modules
+  - client/node_modules
 install:
-  - npm install
-script: 
-  - npm run build
+- npm install
+script:
+- npm run build
 deploy:
   provider: heroku
   api_key:
-    secure:  
+    secure: phooJTZ4h5GtsZDGrBjrjE5gbbjUKs+NGacAKdeJNPry49c4kOZwVA+vrCLXSnOoYvn5qyD/0ra08yaX1yKP/3Qno10fiJAUxXhLMjwG/Ie7BB/C7afA/8Jni3Q9TxlF/AJ5asya65EWeWpcNZ0gZ6CAz2+yLANvANFR2wPnmLuippn4muWpgUzMDLIr22oB64nWPUyvDBj99741RB+roAFk2melZKLWsBuISrwAIfwdB+k8+0u9JWsz0prtZSezst3SwpLHZmi48tJamHPk71hwbegr+oD0hJxsSDci8kq+oiU0vOhi+DGn/wgBf7Khez6RMPB4wbt+VAUeY5sEkM0ZKVsOzU1ZXii9ppK+vJzYrgRbGGI/PMi3bKMtToD1rLUsWrvm+g3hn1PVMZuRyfnHZ0U1joiKQKHvcDo2YUuidh4Qx0ioO/TU0P15N9noKhPf8iGQ5fyesesR/0r9lv/GytcZ1IsC7AlPo7UHwZU5l80QvkpugAEL8dC/JFUt+zHBA1idIZYfOygVFP1jM1MY/TdWnYxH2x53tnfM95lOV4F561DzKA7PJI2GHbxMFE0PrAyCHbLqLBe52cCELPRWRu8Qw3YkPxKaabFPr5r0XxCpSzgp/G103wdoEq9f0Q/JWaZEqjb9XlP9wTzcFpkivYJow89ztafdhke5+Zw=
   app: traveler
   on: master
