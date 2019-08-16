@@ -1,12 +1,18 @@
-const router = require("express").Router()
-// const userRoutes = require("./user");
-const postRoutes = require('./post')
+const router = require("express").Router();
 
-console.log("Inside api routes folder")
-router.use(postRoutes)
-// router.use(userRoutes)
-// router.use(followRoutes)
+// User Routes
+const UserRoutes = require("./user");
+const PostRoutes = require("./post");
+const FollowRoutes = require("./follow")
+const DiscoverRoutes = require("./discover")
+const FeedRoutes = require("./feed")
+// User Registration Routes
 
-
+router.use(PostRoutes)
+router.use(UserRoutes);
+router.use(FollowRoutes);
+router.use(DiscoverRoutes);
+router.use(FeedRoutes)
 
 module.exports = router;
+

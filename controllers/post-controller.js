@@ -1,27 +1,65 @@
-const db = require("../models");
+const db = require("../models")
 
-// Shorthand for console.log
-const log = console.log
-log("Inside the post controller")
 
-// These functions will interact with our database in mySQL. We currently have a function to create posts and get posts
+
 
 module.exports = {
-    createPost: (req, res) => {
-        log("Create Post");
-        log("Request Body", req.body);
-        res.send("Create Post")
 
-        // db.Post.create(req.body).then(
-        //     dbPost => res.json(dbPost)
-        // )
-    },
 
-    getPosts: (req, res) => {
-        log("Get Posts")
-        log(`No request params since this method will be getting all posts`)
-        db.Post.findAll().then(
-            dbPost => res.json(dbPost)
-        )
-    }
+
+	addPost: (req, res) => {
+		console.log("MADE IT TO POST CONTROLLER")
+		console.log(`REQ.BODY:`, req.body)
+		db.Post.create({
+			user_id: req.body.user_id,
+			info: req.body.info,
+			title: req.body.title,
+			location: req.body.location,
+			image: req.body.url,
+			tag: req.body.tag,
+			lat: req.body.lat,
+			lng: req.body.lng
+		}
+		).then(dbPost => res.json(dbPost));
+	},
+
+	getPosts: (req, res) => {
+		db.Post.findAll({
+			// order: [['time', 'desc']],
+			limit: 10
+		}
+		).then(dbPost => res.json(dbPost));
+	},
+
+	getPostSearch: (req, res) => {
+		console.log("\nDISCOVERSEARCH\n")
+		db.Post.findAll({
+			where: {tag: req.params.tag}
+		},
+			{
+				limit: 50
+			}
+		).then(dbPost => {
+			console.log(dbPost);
+			return res.json(dbPost)
+		})
+	},
+
+	getPostsByUser: (req, res) => {
+		console.log("\nGET USER POSTS FOR PROFILE PAGE:", req.params.id)
+		db.Post.findAll(
+			{
+				where: { user_id: req.params.id }
+			},
+			{
+				// order: [['time', 'desc']],
+				limit: 50
+			}
+		).then(dbPost => {
+			console.log(dbPost);
+
+
+			return res.json(dbPost)
+		});
+	}
 }

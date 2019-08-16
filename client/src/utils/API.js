@@ -1,23 +1,74 @@
-import axios from 'axios';
+import axios from "axios";
 
 export default {
 
-    // USERS =======================================================
+   // Discovery Page ==============================
+   followUser: (idPackage) => {
+      return axios.post(`/api/follow`, idPackage)
+   },
 
-    // POSTS =======================================================
+   // ================================
 
-    // USER AUTHENTICATION ==========================================
+   // Profile Page =========================
 
-    // Check if user is authenticated
-    getUser: () => {
-        console.log("Get User")
-        return axios.get("/auth/user")
-    },
+   // Edit User Data
+   editUser: (editData) => {
+      return axios.put(`/api/user`, editData)
+   },
 
-    // Logout the user
-    logout: () => {
-        console.log("Logout User")
-        // return axios.get("/auth/logout")
-    }
+   // Get Profile Info
+   getProfile: (userId) => {
+      return axios.get("/api/user/" + userId)
+   },
 
-}
+   getPhoto: (userId) => {
+      return axios.get("/api/user/" + userId)
+   },
+
+   // getPostPhoto: (userId) => {
+   //    return axios.get("/api/feed/" + userId)
+   // },
+
+   // ============================================
+
+   // Get Posts
+   getPosts: () => {
+      return axios.get(`/api/post`)
+   },
+
+   // getFollowPosts: () => {
+   //    return axios.get(`api/post`)
+   // },
+
+   getFollowPosts: (id) => {
+      return axios.get(`api/follow/` + id)
+   },
+   // Make function for Discover page to get posts based by tags!
+   getPostSearch: (tag) => {
+      return axios.get(`/api/discover/` + tag)
+   },
+
+   // Get Posts By User
+
+   getUserPosts: (userId) => {
+      return axios.get(`/api/post/` + userId)
+   },
+
+   // Post Create Methods
+
+   newPost: function (postData) {
+      return axios.post(`/api/post`, postData)
+   },
+
+   // Authentication methods
+   // ===============================================
+
+   getUser: function () {
+      return axios.get("/auth/user");
+   },
+
+   logout: function () {
+      return axios.get("/auth/logout")
+   }
+
+};
