@@ -1,7 +1,7 @@
 {
   "name": "traveler",
   "version": "0.1.0",
-  "proxy": "https://travelersite.herokuapp.com/",
+  "proxy": "https://git.heroku.com/travelersite.git/",
   "homepage": "http://dchicchon.github.io/Traveler",
   "private": true,
   "dependencies": {
