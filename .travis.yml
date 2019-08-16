@@ -1,4 +1,4 @@
 deploy:
   provider: heroku
   api_key:
-    secure: df28db2d-02bb-46c0-95f7-41a2c92a291a
+    secure: process.env.HEROKU_API_KEY
