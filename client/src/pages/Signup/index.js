@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../components/Grid";
-import Button from '../components/Button'
+import { Col, Row, Container } from "../../components/Grid";
+import Button from '../../components/Button'
 import axios from 'axios'
 
 import { Link } from 'react-router-dom'
@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 // import image5 from '../assets/bg5.jpg';
 // import image6 from '../assets/bg6.jpg';
 
-import UnsplashApiLogin from "../components/UnsplashSlideshow"
+// import UnsplashApiLogin fro../../components/UnsplashSlideshowhow"
 
 
 class Signup extends Component {
@@ -107,7 +107,7 @@ class Signup extends Component {
     render() {
         return (
             <div>
-                <UnsplashApiLogin />
+                {/* <UnsplashApiLogin /> */}
                 <Container>
                     <div className="card-panel center" id="cardStyleSignup">
                         <h4 style={{ marginBottom: '0' }}>Sign Up</h4>

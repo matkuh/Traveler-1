@@ -11,7 +11,7 @@ import Button from '../../components/Button'
 import { Col, Row, Container } from "../../components/Grid";
 import CardPanel from '../../components/CardPanel'
 
-import UnsplashApiLogin from "../../components/UnsplashSlideshow"
+// import UnsplashApiLogin from "../../components/UnsplashSlideshow"
 
 // import './style.css'
 
@@ -111,7 +111,7 @@ class Login extends Component {
           </Container>
         </div>
         {/* <BackgroundSlider images={[image1, image2, image3]} duration={5} transition={1} /> */}
-        <UnsplashApiLogin />
+        {/* <UnsplashApiLogin /> */}
       </div >
 
     )
