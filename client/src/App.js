@@ -70,7 +70,7 @@ class App extends Component {
         console.log("We logged out")
         // var location = "http://localhost:3000"
         // window.location.pathname("/")
-        window.location = "http://localhost:3000"
+        window.location = "/"
 
       })
   }

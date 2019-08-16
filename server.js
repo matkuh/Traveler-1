@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 5000
 const db = require("./models")
 
 app.use((req, res, next) => {
+    console.log("MIDDLEWARE")
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Credentials', true);
