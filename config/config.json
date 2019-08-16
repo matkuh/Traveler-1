@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Lost4815162342",
+    "password": "password",
     "database": "travelerdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
